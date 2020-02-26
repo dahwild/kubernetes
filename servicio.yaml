@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+  labels:
+    project: nginx
+    enviorenment: testing
+spec:
+  type: NodePort
+  selector:
+    project: nginx
+    enviorenment: testing
+  ports:
+    - protocol: TCP
+      port: 80

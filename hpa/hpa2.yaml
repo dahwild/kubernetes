@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hpa-example
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: hpa-example
+      labels:
+        apps: hpa-example
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        resources:
+          requests:
+            memory: "128M"
+            cpu: "500m"
